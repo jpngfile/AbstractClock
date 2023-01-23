@@ -1,11 +1,15 @@
 // setup() is called once at page-load
 
 let draw_seed = 0;
+let cur_minute = 0;
 function setup() {
     //createCanvas(800,600); // make an HTML canvas element width x height pixels
     draw_seed = random(100);
     var canvas = createCanvas(displayWidth, displayHeight); // make an HTML canvas element width x height pixels
     canvas.style('display', 'block');
+
+    cur_minute = minute();
+    console.log(cur_minute);
 }
 
 function windowResized() {
@@ -18,17 +22,27 @@ function draw() {
     let min = minute();
     let sec = second();
 
-    console.log(min);
+    if (min != cur_minute) {
+        console.log(min);
+        cur_minute = min;
+    }
 
     //background(225);
     background(255);
     textSize(32);
 
     const size = 300;
-    translate(300, 300);
     randomSeed(draw_seed);
 
     // hours
+    translate(windowWidth / 2, windowHeight / 2);
+    rotate(PI);
+    for(let i = 0; i < hr; i++) {
+        rotate((2 * PI) / hr);
+        circle(0, size + 15, 30);
+    }
+    push();
+
 
     // minutes
     for(let i = 0; i < min; i++) {
