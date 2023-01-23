@@ -62,4 +62,5 @@ function draw() {
         scale(0.95);
         rect(-size/2, -size/2, size, size);
     }
+    pop();
 }
