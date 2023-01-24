@@ -7,6 +7,10 @@ function setup() {
     var canvas = createCanvas(displayWidth, displayHeight); // make an HTML canvas element width x height pixels
     canvas.style('display', 'block');
 
+    console.log("The rotating squares in the middle represent seconds");
+    console.log("The randomized transparent sectors represent minutes");
+    console.log("The surrounding circles represent hours");
+
     cur_minute = minute();
     console.log(cur_minute);
 }
